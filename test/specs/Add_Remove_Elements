@@ -1,0 +1,20 @@
+import MainPagePage from "../pageobjects/MainPage.page.js"
+//import expect from "chai"
+
+describe('navigate the links', ()=>{
+
+    it('should navigate any link', async()=>{
+
+MainPagePage.open()
+
+//navigate to the Add/Remove Elements
+await MainPagePage.clickAnchorLink(2)
+
+await MainPagePage.clickAddElement()
+await MainPagePage.clickAddElement()
+
+await expect(MainPagePage.deleteButton).toHaveText('Delete')
+
+await browser.pause(2000)
+    })
+})
